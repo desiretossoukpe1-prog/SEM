@@ -1,15 +1,152 @@
 {
-  "hu1999": {"cite": "Hu & Bentler, 1999", "apa": "Hu, L., & Bentler, P. M. (1999). Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives. *Structural Equation Modeling, 6*(1), 1–55. https://doi.org/10.1080/10705519909540118"},
-  "browne1993": {"cite": "Browne & Cudeck, 1993", "apa": "Browne, M. W., & Cudeck, R. (1993). Alternative ways of assessing model fit. In K. A. Bollen & J. S. Long (Eds.), *Testing structural equation models* (pp. 136–162). Sage."},
-  "kline2016": {"cite": "Kline, 2016", "apa": "Kline, R. B. (2016). *Principles and practice of structural equation modeling* (4th ed.). Guilford Press."},
-  "hair2019": {"cite": "Hair et al., 2019", "apa": "Hair, J. F., Black, W. C., Babin, B. J., & Anderson, R. E. (2019). *Multivariate data analysis* (8th ed.). Cengage."},
-  "cohen1988": {"cite": "Cohen, 1988", "apa": "Cohen, J. (1988). *Statistical power analysis for the behavioral sciences* (2nd ed.). Lawrence Erlbaum Associates."},
-  "mcdonald1999": {"cite": "McDonald, 1999", "apa": "McDonald, R. P. (1999). *Test theory: A unified treatment*. Lawrence Erlbaum Associates."},
-  "nunnally1994": {"cite": "Nunnally & Bernstein, 1994", "apa": "Nunnally, J. C., & Bernstein, I. H. (1994). *Psychometric theory* (3rd ed.). McGraw-Hill."},
-  "hayes2020": {"cite": "Hayes & Coutts, 2020", "apa": "Hayes, A. F., & Coutts, J. J. (2020). Use omega rather than Cronbach's alpha for estimating reliability. But…. *Communication Methods and Measures, 14*(1), 1–24. https://doi.org/10.1080/19312458.2020.1718629"},
-  "hayes2018": {"cite": "Hayes, 2018", "apa": "Hayes, A. F. (2018). *Introduction to mediation, moderation, and conditional process analysis: A regression-based approach* (2nd ed.). Guilford Press."},
-  "zhao2010": {"cite": "Zhao et al., 2010", "apa": "Zhao, X., Lynch, J. G., Jr., & Chen, Q. (2010). Reconsidering Baron and Kenny: Myths and truths about mediation analysis. *Journal of Consumer Research, 37*(2), 197–206. https://doi.org/10.1086/651257"},
-  "enders2010": {"cite": "Enders, 2010", "apa": "Enders, C. K. (2010). *Applied missing data analysis*. Guilford Press."},
-  "yuan2000": {"cite": "Yuan & Bentler, 2000", "apa": "Yuan, K.-H., & Bentler, P. M. (2000). Three likelihood-based methods for mean and covariance structures with nonnormal missing data. *Sociological Methodology, 30*(1), 165–200. https://doi.org/10.1111/0081-1750.00078"},
-  "muthen2017": {"cite": "Muthén & Muthén, 1998–2017", "apa": "Muthén, L. K., & Muthén, B. O. (1998–2017). *Mplus user's guide* (8th ed.). Muthén & Muthén."}
+  "_note": "DRAFT. Field names are a guess; rename them to match references/references.json before merging. Hayes & Coutts (2020), Hu & Bentler (1999) and Kline (2016) are already in the repository and are not repeated here. Verify every entry against the publisher page.",
+  "ahn_bowers_2024": {
+    "authors": ["Ahn, J.", "Bowers, A. J."],
+    "year": 2024,
+    "title": "Do teacher beliefs mediate leadership and teacher behaviors?: Testing teacher self-efficacy's mediation role between leadership for learning and teacher outcomes",
+    "journal": "Journal of Educational Administration",
+    "volume": "62",
+    "issue": "2",
+    "pages": "197-222",
+    "doi": "10.1108/JEA-12-2022-0227"
+  },
+  "ahn_bowers_welton_2021": {
+    "authors": ["Ahn, J.", "Bowers, A. J.", "Welton, A. D."],
+    "year": 2021,
+    "title": "Leadership for learning as an organization-wide practice: Evidence on its multilevel structure and implications for educational leadership practice and research",
+    "journal": "International Journal of Leadership in Education",
+    "pages": "1-53",
+    "doi": "10.1080/13603124.2021.1972162",
+    "_check": "Issue version may be 2024, 27(6), 1300-1351. Confirm on the publisher page."
+  },
+  "boker_mcardle_2014": {
+    "authors": ["Boker, S. M.", "McArdle, J. J."],
+    "year": 2014,
+    "title": "Path analysis and path diagrams",
+    "journal": "Wiley StatsRef: Statistics Reference Online",
+    "doi": ""
+  },
+  "fabrigar_1999": {
+    "authors": ["Fabrigar, L. R.", "Wegener, D. T.", "MacCallum, R. C.", "Strahan, E. J."],
+    "year": 1999,
+    "title": "Evaluating the use of exploratory factor analysis in psychological research",
+    "journal": "Psychological Methods",
+    "volume": "4",
+    "issue": "3",
+    "pages": "272-299",
+    "doi": "10.1037/1082-989X.4.3.272"
+  },
+  "kenny_2015": {
+    "authors": ["Kenny, D. A.", "Kaniskan, B.", "McCoach, D. B."],
+    "year": 2015,
+    "title": "The performance of RMSEA in models with small degrees of freedom",
+    "journal": "Sociological Methods & Research",
+    "volume": "44",
+    "issue": "3",
+    "pages": "486-507",
+    "doi": "10.1177/0049124114543236"
+  },
+  "lei_wu_2007": {
+    "authors": ["Lei, P.", "Wu, Q."],
+    "year": 2007,
+    "title": "An NCME instructional module on introduction to structural equation modeling: Issues and practical considerations",
+    "journal": "Educational Measurement: Issues and Practice",
+    "volume": "26",
+    "issue": "3",
+    "pages": "33",
+    "doi": "10.1111/j.1745-3992.2007.00099.x",
+    "_check": "Confirm full page range."
+  },
+  "leithwood_sun_pollock_2017": {
+    "authors": ["Leithwood, K.", "Sun, J.", "Pollock, K."],
+    "year": 2017,
+    "title": "Introduction",
+    "book": "How school leaders contribute to student success: The four paths framework",
+    "editors": "Leithwood, K., et al.",
+    "pages": "1-6",
+    "publisher": "Springer International Publishing",
+    "doi": ""
+  },
+  "leithwood_sun_schumacker_2020": {
+    "authors": ["Leithwood, K.", "Sun, J.", "Schumacker, R."],
+    "year": 2020,
+    "title": "How school leadership influences student learning: A test of \"the four paths model\"",
+    "journal": "Educational Administration Quarterly",
+    "volume": "56",
+    "issue": "4",
+    "pages": "570-599",
+    "doi": "10.1177/0013161X19878772"
+  },
+  "louis_murphy_smylie_2016": {
+    "authors": ["Louis, K. S.", "Murphy, J.", "Smylie, M."],
+    "year": 2016,
+    "title": "Caring leadership in schools: Findings from exploratory analyses",
+    "journal": "Educational Administration Quarterly",
+    "volume": "52",
+    "issue": "2",
+    "pages": "310-348",
+    "doi": "10.1177/0013161X15627678"
+  },
+  "mehta_neale_2005": {
+    "authors": ["Mehta, P. D.", "Neale, M. C."],
+    "year": 2005,
+    "title": "People are variables too: Multilevel structural equations modeling",
+    "journal": "Psychological Methods",
+    "volume": "10",
+    "issue": "3",
+    "pages": "259",
+    "doi": "10.1037/1082-989X.10.3.259",
+    "_check": "Confirm full page range."
+  },
+  "richards_1982": {
+    "authors": ["Richards, J. M."],
+    "year": 1982,
+    "title": "Standardized versus unstandardized regression weights",
+    "journal": "Applied Psychological Measurement",
+    "volume": "6",
+    "issue": "2",
+    "pages": "201-212",
+    "doi": "10.1177/014662168200600206"
+  },
+  "slaten_2018": {
+    "authors": ["Slaten, C. D.", "Elison, Z. M.", "Deemer, E. D.", "Hughes, H. A.", "Shemwell, D. A."],
+    "year": 2018,
+    "title": "The development and validation of the university belonging questionnaire",
+    "journal": "The Journal of Experimental Education",
+    "volume": "86",
+    "issue": "4",
+    "pages": "633-651",
+    "doi": "10.1080/00220973.2017.1339009"
+  },
+  "tarhini_2017": {
+    "authors": ["Tarhini, A.", "Masa'deh, R.", "Al-Busaidi, K. A.", "Mohammed, A. B.", "Maqableh, M."],
+    "year": 2017,
+    "title": "Factors influencing students' adoption of e-learning: A structural equation modeling approach",
+    "journal": "Journal of International Education in Business",
+    "volume": "10",
+    "issue": "2",
+    "pages": "164-182",
+    "doi": "10.1108/JIEB-09-2016-0032",
+    "_check": "Author names were reformatted from your list. Verify against the article."
+  },
+  "tschannen_moran_hoy_2001": {
+    "authors": ["Tschannen-Moran, M.", "Hoy, A. W."],
+    "year": 2001,
+    "title": "Teacher efficacy: Capturing an elusive construct",
+    "journal": "Teaching and Teacher Education",
+    "volume": "17",
+    "issue": "7",
+    "pages": "783-805",
+    "doi": "10.1016/S0742-051X(01)00036-1"
+  },
+  "wang_ahn_2025": {
+    "authors": ["Wang, Y.", "Ahn, J."],
+    "year": 2025,
+    "title": "The more the merrier? A network analysis of construct content validity in school leadership literature",
+    "journal": "Educational Management Administration & Leadership",
+    "volume": "53",
+    "issue": "1",
+    "pages": "214-231",
+    "doi": "10.1177/17411432231155730"
+  }
 }
