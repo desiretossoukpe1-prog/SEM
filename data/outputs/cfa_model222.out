@@ -1,0 +1,735 @@
+Mplus VERSION 9.1.1
+MUTHEN & MUTHEN
+10/31/2026   5:39 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: FINAL AT LARGE PROJECT SEM MEDIATION
+
+  DATA: FILE = dataset11.csv;
+
+  VARIABLE:
+    NAMES ARE IDTEACH
+              TT3G34D TT3G34F TT3G34H
+              TT3G41A TT3G41BR TT3G41C TT3G41D
+              TT3G52F TT3G52G TT3G52H
+              TT3G34I TT3G01 TT3G11B;
+    USEVARIABLES = TT3G41A TT3G41BR TT3G41C TT3G41D
+                   TT3G52F TT3G52G TT3G52H
+                   TT3G34D TT3G34F TT3G34H TT3G34I
+                   TT3G01 TT3G11B;
+    IDVARIABLE = IDTEACH;
+    MISSING = ALL (-99);
+
+  DEFINE:
+    STANDARDIZE TT3G11B;   ! z-scores (mean 0, SD 1)
+
+  ANALYSIS:
+    ESTIMATOR = MLR;
+
+  MODEL:
+    ! Measurement model
+    FDISC  BY TT3G41A TT3G41BR TT3G41C TT3G41D;
+    FSTBEH BY TT3G52F TT3G52G TT3G52H;
+    FSECLS BY TT3G34D TT3G34F TT3G34H TT3G34I;
+
+    ! Mediator (stress) predicted by climate and controls
+    FSTBEH ON FDISC (a)
+              TT3G01
+              TT3G11B;
+
+    ! Outcome (self-efficacy) predicted by stress, climate and controls
+    FSECLS ON FSTBEH (b)
+              FDISC (cprime)
+              TT3G01
+              TT3G11B;
+
+    ! Covariances among exogenous variables
+    ! (keeps teachers with missing controls in the analysis)
+    FDISC WITH TT3G01 TT3G11B;
+    TT3G01 WITH TT3G11B;
+
+  MODEL INDIRECT:
+    FSECLS IND FDISC;
+
+  OUTPUT: STDYX TECH1;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables except
+  x-variables.  These cases were not included in the analysis.
+  Number of cases with missing on all variables except x-variables:  5983
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+FINAL AT LARGE PROJECT SEM MEDIATION
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                      255443
+
+Number of dependent variables                                   11
+Number of independent variables                                  2
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   TT3G41A     TT3G41BR    TT3G41C     TT3G41D     TT3G52F     TT3G52G
+   TT3G52H     TT3G34D     TT3G34F     TT3G34H     TT3G34I
+
+Observed independent variables
+   TT3G01      TT3G11B
+
+Continuous latent variables
+   FDISC       FSTBEH      FSECLS
+
+Variables with special functions
+
+  ID variable           IDTEACH
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  dataset11.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           443
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              TT3G41A       TT3G41BR      TT3G41C       TT3G41D       TT3G52F
+              ________      ________      ________      ________      ________
+ TT3G41A        0.833
+ TT3G41BR       0.831         0.832
+ TT3G41C        0.832         0.831         0.832
+ TT3G41D        0.832         0.831         0.832         0.832
+ TT3G52F        0.827         0.826         0.826         0.826         0.988
+ TT3G52G        0.827         0.826         0.826         0.826         0.986
+ TT3G52H        0.826         0.825         0.826         0.826         0.985
+ TT3G34D        0.814         0.813         0.813         0.813         0.966
+ TT3G34F        0.814         0.813         0.814         0.814         0.966
+ TT3G34H        0.814         0.813         0.814         0.814         0.966
+ TT3G34I        0.814         0.813         0.814         0.813         0.966
+ TT3G01         0.833         0.832         0.832         0.832         0.988
+ TT3G11B        0.830         0.830         0.830         0.830         0.985
+
+
+           Covariance Coverage
+              TT3G52G       TT3G52H       TT3G34D       TT3G34F       TT3G34H
+              ________      ________      ________      ________      ________
+ TT3G52G        0.988
+ TT3G52H        0.985         0.987
+ TT3G34D        0.966         0.965         0.976
+ TT3G34F        0.966         0.966         0.974         0.977
+ TT3G34H        0.966         0.966         0.974         0.975         0.977
+ TT3G34I        0.966         0.965         0.974         0.975         0.975
+ TT3G01         0.988         0.987         0.976         0.977         0.977
+ TT3G11B        0.985         0.984         0.972         0.973         0.973
+
+
+           Covariance Coverage
+              TT3G34I       TT3G01        TT3G11B
+              ________      ________      ________
+ TT3G34I        0.976
+ TT3G01         0.976         1.000
+ TT3G11B        0.973         0.996         0.996
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     TT3G41A               2.033       0.503       1.000   26.51%       1.000      2.000      2.000
+          212818.000       0.664      -0.199       4.000    5.08%       2.000      3.000
+     TT3G41BR              2.119       0.482       1.000   17.21%       2.000      2.000      2.000
+          212608.000       0.537       0.272       4.000    4.39%       2.000      3.000
+     TT3G41C               2.078       0.456       1.000   24.28%       1.000      2.000      2.000
+          212653.000       0.667      -0.245       4.000    5.45%       2.000      3.000
+     TT3G41D               2.015       0.510       1.000   27.43%       1.000      2.000      2.000
+          212606.000       0.659      -0.197       4.000    4.79%       2.000      3.000
+     TT3G52F               2.427       0.116       1.000   18.30%       2.000      2.000      2.000
+          252456.000       0.922      -0.933       4.000   15.55%       3.000      3.000
+     TT3G52G               2.266       0.318       1.000   24.53%       1.000      2.000      2.000
+          252422.000       0.957      -0.895       4.000   13.56%       2.000      3.000
+     TT3G52H               1.512       1.591       1.000   65.27%       1.000      1.000      1.000
+          252194.000       0.667       1.747       4.000    4.38%       1.000      2.000
+     TT3G34D               3.288      -0.563       1.000    0.58%       3.000      3.000      3.000
+          249319.000       0.487      -0.427       4.000   42.30%       4.000      4.000
+     TT3G34F               3.407      -0.711       1.000    0.32%       3.000      3.000      3.000
+          249483.000       0.422      -0.210       4.000   49.40%       4.000      4.000
+     TT3G34H               3.364      -0.630       1.000    0.35%       3.000      3.000      3.000
+          249509.000       0.437      -0.325       4.000   46.31%       4.000      4.000
+     TT3G34I               3.263      -0.523       1.000    0.59%       3.000      3.000      3.000
+          249436.000       0.499      -0.509       4.000   41.00%       4.000      4.000
+     TT3G01                0.312       0.814       0.000   68.85%       0.000      0.000      0.000
+          255434.000       0.214      -1.338       1.000   31.15%       0.000      1.000
+     TT3G11B               0.000       0.495      -1.561    1.80%      -0.984     -0.408     -0.119
+          254431.000       1.000      -0.495       4.015    0.00%       0.169      0.938
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       47
+
+Loglikelihood
+
+          H0 Value                    -3072213.248
+          H0 Scaling Correction Factor      1.1658
+            for MLR
+          H1 Value                    -3061708.780
+          H1 Scaling Correction Factor      1.1195
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                 6144520.497
+          Bayesian (BIC)               6145011.682
+          Sample-Size Adjusted BIC     6144862.314
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                          19429.654*
+          Degrees of Freedom                    57
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0813
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.036
+          90 Percent C.I.                    0.036  0.037
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.978
+          TLI                                0.970
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                         861929.682
+          Degrees of Freedom                    77
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.033
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FDISC    BY
+    TT3G41A            1.000      0.000    999.000    999.000
+    TT3G41BR           0.612      0.003    209.873      0.000
+    TT3G41C            1.130      0.003    400.096      0.000
+    TT3G41D            1.083      0.003    381.336      0.000
+
+ FSTBEH   BY
+    TT3G52F            1.000      0.000    999.000    999.000
+    TT3G52G            1.994      0.011    180.585      0.000
+    TT3G52H            0.865      0.005    161.939      0.000
+
+ FSECLS   BY
+    TT3G34D            1.000      0.000    999.000    999.000
+    TT3G34F            0.764      0.003    296.117      0.000
+    TT3G34H            0.989      0.003    373.379      0.000
+    TT3G34I            1.036      0.003    409.594      0.000
+
+ FSTBEH   ON
+    FDISC              0.376      0.002    151.513      0.000
+
+ FSECLS   ON
+    FSTBEH            -0.025      0.003     -7.401      0.000
+    FDISC             -0.236      0.003    -85.429      0.000
+
+ FSTBEH   ON
+    TT3G01            -0.040      0.002    -20.163      0.000
+    TT3G11B            0.001      0.001      0.729      0.466
+
+ FSECLS   ON
+    TT3G01            -0.038      0.003    -15.251      0.000
+    TT3G11B            0.021      0.001     18.097      0.000
+
+ FDISC    WITH
+    TT3G01             0.006      0.001      9.537      0.000
+    TT3G11B           -0.085      0.001    -59.302      0.000
+
+ TT3G01   WITH
+    TT3G11B           -0.009      0.001     -9.787      0.000
+
+ Means
+    TT3G01             0.312      0.001    339.980      0.000
+    TT3G11B            0.000      0.002      0.010      0.992
+
+ Intercepts
+    TT3G41A            2.039      0.002   1167.928      0.000
+    TT3G41BR           2.122      0.002   1344.225      0.000
+    TT3G41C            2.084      0.002   1193.212      0.000
+    TT3G41D            2.021      0.002   1161.292      0.000
+    TT3G52F            2.439      0.002   1217.280      0.000
+    TT3G52G            2.291      0.002    997.033      0.000
+    TT3G52H            1.523      0.002    871.260      0.000
+    TT3G34D            3.300      0.002   2080.015      0.000
+    TT3G34F            3.416      0.001   2416.115      0.000
+    TT3G34H            3.376      0.002   2235.165      0.000
+    TT3G34I            3.276      0.002   2024.264      0.000
+
+ Variances
+    TT3G01             0.214      0.000    620.978      0.000
+    TT3G11B            1.000      0.002    411.107      0.000
+    FDISC              0.407      0.002    198.792      0.000
+
+ Residual Variances
+    TT3G41A            0.257      0.001    177.133      0.000
+    TT3G41BR           0.384      0.002    217.854      0.000
+    TT3G41C            0.147      0.001    130.601      0.000
+    TT3G41D            0.181      0.001    141.068      0.000
+    TT3G52F            0.708      0.002    341.531      0.000
+    TT3G52G            0.107      0.004     25.670      0.000
+    TT3G52H            0.508      0.002    247.107      0.000
+    TT3G34D            0.188      0.001    189.558      0.000
+    TT3G34F            0.247      0.001    249.488      0.000
+    TT3G34H            0.145      0.001    175.839      0.000
+    TT3G34I            0.178      0.001    179.031      0.000
+    FSTBEH             0.156      0.001    108.408      0.000
+    FSECLS             0.273      0.001    217.013      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.170E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FDISC    BY
+    TT3G41A            0.783      0.001    570.734      0.000
+    TT3G41BR           0.533      0.002    233.581      0.000
+    TT3G41C            0.883      0.001    910.754      0.000
+    TT3G41D            0.851      0.001    747.176      0.000
+
+ FSTBEH   BY
+    TT3G52F            0.481      0.002    244.083      0.000
+    TT3G52G            0.942      0.002    407.033      0.000
+    TT3G52H            0.489      0.002    208.188      0.000
+
+ FSECLS   BY
+    TT3G34D            0.784      0.001    614.572      0.000
+    TT3G34F            0.644      0.002    389.638      0.000
+    TT3G34H            0.818      0.001    698.436      0.000
+    TT3G34I            0.803      0.001    661.232      0.000
+
+ FSTBEH   ON
+    FDISC              0.519      0.002    220.399      0.000
+
+ FSECLS   ON
+    FSTBEH            -0.021      0.003     -7.443      0.000
+    FDISC             -0.275      0.003    -88.333      0.000
+
+ FSTBEH   ON
+    TT3G01            -0.040      0.002    -20.470      0.000
+    TT3G11B            0.001      0.002      0.729      0.466
+
+ FSECLS   ON
+    TT3G01            -0.032      0.002    -15.254      0.000
+    TT3G11B            0.039      0.002     18.162      0.000
+
+ FDISC    WITH
+    TT3G01             0.022      0.002      9.538      0.000
+    TT3G11B           -0.134      0.002    -60.719      0.000
+
+ TT3G01   WITH
+    TT3G11B           -0.019      0.002     -9.789      0.000
+
+ Means
+    TT3G01             0.673      0.001    468.128      0.000
+    TT3G11B            0.000      0.002      0.010      0.992
+
+ Intercepts
+    TT3G41A            2.501      0.003    725.936      0.000
+    TT3G41BR           2.896      0.005    641.116      0.000
+    TT3G41C            2.552      0.004    722.160      0.000
+    TT3G41D            2.489      0.003    727.436      0.000
+    TT3G52F            2.541      0.003    811.863      0.000
+    TT3G52G            2.342      0.003    808.875      0.000
+    TT3G52H            1.864      0.002    808.053      0.000
+    TT3G34D            4.727      0.007    665.921      0.000
+    TT3G34F            5.258      0.008    636.676      0.000
+    TT3G34H            5.104      0.008    656.830      0.000
+    TT3G34I            4.636      0.007    680.042      0.000
+
+ Variances
+    TT3G01             1.000      0.000    999.000    999.000
+    TT3G11B            1.000      0.000    999.000    999.000
+    FDISC              1.000      0.000    999.000    999.000
+
+ Residual Variances
+    TT3G41A            0.387      0.002    180.072      0.000
+    TT3G41BR           0.716      0.002    294.118      0.000
+    TT3G41C            0.220      0.002    128.590      0.000
+    TT3G41D            0.275      0.002    141.830      0.000
+    TT3G52F            0.768      0.002    404.497      0.000
+    TT3G52G            0.112      0.004     25.682      0.000
+    TT3G52H            0.761      0.002    330.720      0.000
+    TT3G34D            0.385      0.002    192.620      0.000
+    TT3G34F            0.585      0.002    275.139      0.000
+    TT3G34H            0.331      0.002    172.485      0.000
+    TT3G34I            0.356      0.002    182.643      0.000
+    FSTBEH             0.731      0.002    305.019      0.000
+    FSECLS             0.912      0.001    620.597      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    TT3G41A            0.613      0.002    285.367      0.000
+    TT3G41BR           0.284      0.002    116.790      0.000
+    TT3G41C            0.780      0.002    455.377      0.000
+    TT3G41D            0.725      0.002    373.588      0.000
+    TT3G52F            0.232      0.002    122.042      0.000
+    TT3G52G            0.888      0.004    203.516      0.000
+    TT3G52H            0.239      0.002    104.094      0.000
+    TT3G34D            0.615      0.002    307.286      0.000
+    TT3G34F            0.415      0.002    194.819      0.000
+    TT3G34H            0.669      0.002    349.218      0.000
+    TT3G34I            0.644      0.002    330.616      0.000
+
+     Latent                                         Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    FSTBEH             0.269      0.002    112.502      0.000
+    FSECLS             0.088      0.001     60.142      0.000
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FDISC to FSECLS
+
+  Total               -0.246      0.002   -105.599      0.000
+  Total indirect      -0.010      0.001     -7.448      0.000
+
+  Specific indirect 1
+    FSECLS
+    FSTBEH
+    FDISC             -0.010      0.001     -7.448      0.000
+
+  Direct
+    FSECLS
+    FDISC             -0.236      0.003    -85.429      0.000
+
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FDISC to FSECLS
+
+  Total               -0.286      0.003   -112.340      0.000
+  Total indirect      -0.011      0.001     -7.459      0.000
+
+  Specific indirect 1
+    FSECLS
+    FSTBEH
+    FDISC             -0.011      0.001     -7.459      0.000
+
+  Direct
+    FSECLS
+    FDISC             -0.275      0.003    -88.333      0.000
+
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              TT3G41A       TT3G41BR      TT3G41C       TT3G41D       TT3G52F
+              ________      ________      ________      ________      ________
+                  1             2             3             4             5
+
+
+           NU
+              TT3G52G       TT3G52H       TT3G34D       TT3G34F       TT3G34H
+              ________      ________      ________      ________      ________
+                  6             7             8             9            10
+
+
+           NU
+              TT3G34I       TT3G01        TT3G11B
+              ________      ________      ________
+                 11             0             0
+
+
+           LAMBDA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ TT3G41A            0             0             0             0             0
+ TT3G41BR          12             0             0             0             0
+ TT3G41C           13             0             0             0             0
+ TT3G41D           14             0             0             0             0
+ TT3G52F            0             0             0             0             0
+ TT3G52G            0            15             0             0             0
+ TT3G52H            0            16             0             0             0
+ TT3G34D            0             0             0             0             0
+ TT3G34F            0             0            17             0             0
+ TT3G34H            0             0            18             0             0
+ TT3G34I            0             0            19             0             0
+ TT3G01             0             0             0             0             0
+ TT3G11B            0             0             0             0             0
+
+
+           THETA
+              TT3G41A       TT3G41BR      TT3G41C       TT3G41D       TT3G52F
+              ________      ________      ________      ________      ________
+ TT3G41A           20
+ TT3G41BR           0            21
+ TT3G41C            0             0            22
+ TT3G41D            0             0             0            23
+ TT3G52F            0             0             0             0            24
+ TT3G52G            0             0             0             0             0
+ TT3G52H            0             0             0             0             0
+ TT3G34D            0             0             0             0             0
+ TT3G34F            0             0             0             0             0
+ TT3G34H            0             0             0             0             0
+ TT3G34I            0             0             0             0             0
+ TT3G01             0             0             0             0             0
+ TT3G11B            0             0             0             0             0
+
+
+           THETA
+              TT3G52G       TT3G52H       TT3G34D       TT3G34F       TT3G34H
+              ________      ________      ________      ________      ________
+ TT3G52G           25
+ TT3G52H            0            26
+ TT3G34D            0             0            27
+ TT3G34F            0             0             0            28
+ TT3G34H            0             0             0             0            29
+ TT3G34I            0             0             0             0             0
+ TT3G01             0             0             0             0             0
+ TT3G11B            0             0             0             0             0
+
+
+           THETA
+              TT3G34I       TT3G01        TT3G11B
+              ________      ________      ________
+ TT3G34I           30
+ TT3G01             0             0
+ TT3G11B            0             0             0
+
+
+           ALPHA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+                  0             0             0            31            32
+
+
+           BETA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ FDISC              0             0             0             0             0
+ FSTBEH            33             0             0            34            35
+ FSECLS            36            37             0            38            39
+ TT3G01             0             0             0             0             0
+ TT3G11B            0             0             0             0             0
+
+
+           PSI
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ FDISC             40
+ FSTBEH             0            41
+ FSECLS             0             0            42
+ TT3G01            43             0             0            44
+ TT3G11B           45             0             0            46            47
+
+
+     STARTING VALUES
+
+
+           NU
+              TT3G41A       TT3G41BR      TT3G41C       TT3G41D       TT3G52F
+              ________      ________      ________      ________      ________
+                2.033         2.119         2.078         2.015         2.427
+
+
+           NU
+              TT3G52G       TT3G52H       TT3G34D       TT3G34F       TT3G34H
+              ________      ________      ________      ________      ________
+                2.266         1.512         3.288         3.407         3.364
+
+
+           NU
+              TT3G34I       TT3G01        TT3G11B
+              ________      ________      ________
+                3.263         0.000         0.000
+
+
+           LAMBDA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ TT3G41A        1.000         0.000         0.000         0.000         0.000
+ TT3G41BR       0.608         0.000         0.000         0.000         0.000
+ TT3G41C        1.141         0.000         0.000         0.000         0.000
+ TT3G41D        1.091         0.000         0.000         0.000         0.000
+ TT3G52F        0.000         1.000         0.000         0.000         0.000
+ TT3G52G        0.000         1.736         0.000         0.000         0.000
+ TT3G52H        0.000         0.842         0.000         0.000         0.000
+ TT3G34D        0.000         0.000         1.000         0.000         0.000
+ TT3G34F        0.000         0.000         0.760         0.000         0.000
+ TT3G34H        0.000         0.000         0.986         0.000         0.000
+ TT3G34I        0.000         0.000         1.039         0.000         0.000
+ TT3G01         0.000         0.000         0.000         1.000         0.000
+ TT3G11B        0.000         0.000         0.000         0.000         1.000
+
+
+           THETA
+              TT3G41A       TT3G41BR      TT3G41C       TT3G41D       TT3G52F
+              ________      ________      ________      ________      ________
+ TT3G41A        0.332
+ TT3G41BR       0.000         0.268
+ TT3G41C        0.000         0.000         0.333
+ TT3G41D        0.000         0.000         0.000         0.329
+ TT3G52F        0.000         0.000         0.000         0.000         0.461
+ TT3G52G        0.000         0.000         0.000         0.000         0.000
+ TT3G52H        0.000         0.000         0.000         0.000         0.000
+ TT3G34D        0.000         0.000         0.000         0.000         0.000
+ TT3G34F        0.000         0.000         0.000         0.000         0.000
+ TT3G34H        0.000         0.000         0.000         0.000         0.000
+ TT3G34I        0.000         0.000         0.000         0.000         0.000
+ TT3G01         0.000         0.000         0.000         0.000         0.000
+ TT3G11B        0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              TT3G52G       TT3G52H       TT3G34D       TT3G34F       TT3G34H
+              ________      ________      ________      ________      ________
+ TT3G52G        0.478
+ TT3G52H        0.000         0.334
+ TT3G34D        0.000         0.000         0.244
+ TT3G34F        0.000         0.000         0.000         0.211
+ TT3G34H        0.000         0.000         0.000         0.000         0.219
+ TT3G34I        0.000         0.000         0.000         0.000         0.000
+ TT3G01         0.000         0.000         0.000         0.000         0.000
+ TT3G11B        0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              TT3G34I       TT3G01        TT3G11B
+              ________      ________      ________
+ TT3G34I        0.250
+ TT3G01         0.000         0.000
+ TT3G11B        0.000         0.000         0.000
+
+
+           ALPHA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.312         0.000
+
+
+           BETA
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ FDISC          0.000         0.000         0.000         0.000         0.000
+ FSTBEH         0.000         0.000         0.000         0.000         0.000
+ FSECLS         0.000         0.000         0.000         0.000         0.000
+ TT3G01         0.000         0.000         0.000         0.000         0.000
+ TT3G11B        0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              FDISC         FSTBEH        FSECLS        TT3G01        TT3G11B
+              ________      ________      ________      ________      ________
+ FDISC          0.050
+ FSTBEH         0.000         0.050
+ FSECLS         0.000         0.000         0.050
+ TT3G01         0.000         0.000         0.000         0.107
+ TT3G11B        0.000         0.000         0.000         0.000         0.500
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\user\downloads\sem course\final project\final at large\cfa_model222.dgm
+
+     Beginning Time:  05:39:23
+        Ending Time:  05:39:44
+       Elapsed Time:  00:00:21
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2026 Muthen & Muthen
