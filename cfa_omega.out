@@ -1,0 +1,175 @@
+Mplus VERSION 9.1.1
+MUTHEN & MUTHEN
+
+INPUT INSTRUCTIONS
+
+  TITLE: FINAL AT LARGE PROJECT CFA and OMEGA
+
+*** WARNING
+  Data set contains cases with missing on all variables except
+  x-variables.  These cases were not included in the analysis.
+  Number of cases with missing on all variables except x-variables:  5983
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+FINAL AT LARGE PROJECT CFA and OMEGA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                      255443
+
+Number of dependent variables                                   11
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Estimator                                                      MLR
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           387
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       36
+
+Loglikelihood
+
+          H0 Value                    -2547844.765
+          H0 Scaling Correction Factor      1.2401
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                 5095761.530
+          Bayesian (BIC)               5096137.757
+          Sample-Size Adjusted BIC     5096023.348
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                          15067.699*
+          Degrees of Freedom                    41
+          P-Value                           0.0000
+          Scaling Correction Factor         1.1098
+            for MLR
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.038
+          90 Percent C.I.                    0.037  0.038
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.981
+          TLI                                0.975
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                         806231.641
+          Degrees of Freedom                    55
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.036
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FDISC    BY
+    TT3G41A            0.638      0.002    397.450      0.000
+    TT3G41BR           0.391      0.002    214.683      0.000
+    TT3G41C            0.721      0.001    502.646      0.000
+    TT3G41D            0.691      0.001    464.111      0.000
+
+ FSTBEH   BY
+    TT3G52F            0.461      0.002    228.579      0.000
+    TT3G52G            0.925      0.002    377.590      0.000
+    TT3G52H            0.398      0.002    174.365      0.000
+
+ FSECLS   BY
+    TT3G34D            0.547      0.001    444.221      0.000
+    TT3G34F            0.418      0.001    317.760      0.000
+    TT3G34H            0.541      0.001    460.701      0.000
+    TT3G34I            0.568      0.001    475.421      0.000
+
+ FDISC    WITH
+    FSTBEH             0.516      0.002    225.008      0.000
+    FSECLS            -0.293      0.003   -116.159      0.000
+
+ FSTBEH   WITH
+    FSECLS            -0.165      0.002    -69.516      0.000
+
+ Variances
+    FDISC              1.000      0.000    999.000    999.000
+    FSTBEH             1.000      0.000    999.000    999.000
+    FSECLS             1.000      0.000    999.000    999.000
+
+ Residual Variances
+    TT3G41A            0.257      0.001    176.720      0.000
+    TT3G41BR           0.384      0.002    217.789      0.000
+
+New/Additional Parameters
+    OMEGAD             0.860      0.001   1408.269      0.000
+    OMEGAS             0.707      0.001    683.519      0.000
+    OMEGAC             0.850      0.001   1460.133      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.224E-06
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FDISC    BY
+    TT3G41A            0.783      0.001    570.405      0.000
+    TT3G41BR           0.533      0.002    233.634      0.000
+    TT3G41C            0.883      0.001    910.112      0.000
+    TT3G41D            0.851      0.001    746.397      0.000
+
+ FSTBEH   BY
+    TT3G52F            0.480      0.002    245.144      0.000
+    TT3G52G            0.946      0.002    413.433      0.000
+    TT3G52H            0.487      0.002    208.090      0.000
+
+ FSECLS   BY
+    TT3G34D            0.784      0.001    615.135      0.000
+    TT3G34F            0.644      0.002    389.500      0.000
+    TT3G34H            0.818      0.001    697.820      0.000
+    TT3G34I            0.803      0.001    662.767      0.000
+
+ FDISC    WITH
+    FSTBEH             0.516      0.002    225.008      0.000
+    FSECLS            -0.293      0.003   -116.159      0.000
+
+ FSTBEH   WITH
+    FSECLS            -0.165      0.002    -69.516      0.000
+
+ Residual Variances
+    TT3G41A            0.386      0.002    179.612      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    TT3G41A            0.614      0.002    285.202      0.000
+    TT3G41BR           0.284      0.002    116.817      0.000
+
+
+     Beginning Time:  19:45:16

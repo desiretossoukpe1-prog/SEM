@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+# Never commit raw data. Only commit Mplus output (.out) files.
+*.csv
+*.dat
+*.sav
