@@ -1,0 +1,14 @@
+{
+  "T3DISC": "perceived disciplinary climate",
+  "T3STBEH": "student behavior stress",
+  "T3SECLS": "classroom management self-efficacy",
+  "FDISC": "perceived disciplinary climate",
+  "FSTBEH": "student behavior stress",
+  "FSECLS": "classroom management self-efficacy",
+  "OMEGAD": "perceived disciplinary climate",
+  "OMEGAS": "student behavior stress",
+  "OMEGAC": "classroom management self-efficacy",
+  "TT3G01": "gender",
+  "TT3G01R": "gender (recoded)",
+  "TT3G11B": "years of teaching experience"
+}

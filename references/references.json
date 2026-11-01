@@ -1,0 +1,15 @@
+{
+  "hu1999": {"cite": "Hu & Bentler, 1999", "apa": "Hu, L., & Bentler, P. M. (1999). Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives. *Structural Equation Modeling, 6*(1), 1–55. https://doi.org/10.1080/10705519909540118"},
+  "browne1993": {"cite": "Browne & Cudeck, 1993", "apa": "Browne, M. W., & Cudeck, R. (1993). Alternative ways of assessing model fit. In K. A. Bollen & J. S. Long (Eds.), *Testing structural equation models* (pp. 136–162). Sage."},
+  "kline2016": {"cite": "Kline, 2016", "apa": "Kline, R. B. (2016). *Principles and practice of structural equation modeling* (4th ed.). Guilford Press."},
+  "hair2019": {"cite": "Hair et al., 2019", "apa": "Hair, J. F., Black, W. C., Babin, B. J., & Anderson, R. E. (2019). *Multivariate data analysis* (8th ed.). Cengage."},
+  "cohen1988": {"cite": "Cohen, 1988", "apa": "Cohen, J. (1988). *Statistical power analysis for the behavioral sciences* (2nd ed.). Lawrence Erlbaum Associates."},
+  "mcdonald1999": {"cite": "McDonald, 1999", "apa": "McDonald, R. P. (1999). *Test theory: A unified treatment*. Lawrence Erlbaum Associates."},
+  "nunnally1994": {"cite": "Nunnally & Bernstein, 1994", "apa": "Nunnally, J. C., & Bernstein, I. H. (1994). *Psychometric theory* (3rd ed.). McGraw-Hill."},
+  "hayes2020": {"cite": "Hayes & Coutts, 2020", "apa": "Hayes, A. F., & Coutts, J. J. (2020). Use omega rather than Cronbach's alpha for estimating reliability. But…. *Communication Methods and Measures, 14*(1), 1–24. https://doi.org/10.1080/19312458.2020.1718629"},
+  "hayes2018": {"cite": "Hayes, 2018", "apa": "Hayes, A. F. (2018). *Introduction to mediation, moderation, and conditional process analysis: A regression-based approach* (2nd ed.). Guilford Press."},
+  "zhao2010": {"cite": "Zhao et al., 2010", "apa": "Zhao, X., Lynch, J. G., Jr., & Chen, Q. (2010). Reconsidering Baron and Kenny: Myths and truths about mediation analysis. *Journal of Consumer Research, 37*(2), 197–206. https://doi.org/10.1086/651257"},
+  "enders2010": {"cite": "Enders, 2010", "apa": "Enders, C. K. (2010). *Applied missing data analysis*. Guilford Press."},
+  "yuan2000": {"cite": "Yuan & Bentler, 2000", "apa": "Yuan, K.-H., & Bentler, P. M. (2000). Three likelihood-based methods for mean and covariance structures with nonnormal missing data. *Sociological Methodology, 30*(1), 165–200. https://doi.org/10.1111/0081-1750.00078"},
+  "muthen2017": {"cite": "Muthén & Muthén, 1998–2017", "apa": "Muthén, L. K., & Muthén, B. O. (1998–2017). *Mplus user's guide* (8th ed.). Muthén & Muthén."}
+}
